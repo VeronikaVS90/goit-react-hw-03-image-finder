@@ -23,6 +23,6 @@ export class Modal extends PureComponent {
 }
 
 Modal.propTypes = {
-    imageURL: PropTypes.string.isRequired,
-    toggleModal: PropTypes.func.isRequired,
+  imageURL: PropTypes.string.isRequired,
+  toggleModal: PropTypes.func.isRequired,
 };

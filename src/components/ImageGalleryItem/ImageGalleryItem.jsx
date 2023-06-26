@@ -8,19 +8,21 @@ export class ImageGalleryItem extends PureComponent {
         modalOpen: false,
     };
 
-    toggleModal = event => {
-        const { dataset, nodeName } = event.target;
+     toggleModal = event => {
+    const { dataset, nodeName } = event.target;
 
-        if (
-            event.code === 'Escape' || dataset.openModal
-        ) {
-            return this.setState(prevState => ({ modalOpen: !prevState.modalOpen }))
-        }
+    if (
+      event.code === 'Escape' ||
+      (dataset.backdrop && nodeName !== 'IMG') ||
+      dataset.openModal
+    ) {
+      return this.setState(prevState => ({ modalOpen: !prevState.modalOpen }));
+    }
 
-        if (nodeName === 'IMG') {
-            return;
-        }
-    };
+    if (nodeName === 'IMG') {
+      return;
+    }
+  };
 
     render() {
         const { webformatURL, largeImageURL } = this.props;
