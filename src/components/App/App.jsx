@@ -90,7 +90,7 @@ export class App extends PureComponent {
     return (
       <AppWrapper>
         <Searchbar onSubmit={this.handleFormSubmit} />
-        <ImageGallery images={images} />
+        {images.length > 0 && <ImageGallery images={images} />}
         {status === 'pending' && <Loader />}
         {status === 'resolved' && (
           <LoadMoreButton onClick={this.handleLoadMore} />
